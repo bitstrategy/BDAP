@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "404页面找不到";
+}
+
+@{
+    YYBDAP.ViewModel.ExecptionViewModel evm = ViewData["ExecptionViewModel"] as YYBDAP.ViewModel.ExecptionViewModel;
+}
+
+@if (null == evm)
+{
+    <h1>@("发生了未知的错误")</h1>
+}
+else
+{
+    <h2>@evm.StatusCode</h2>
+    <h1>源IP：@evm.SrcIP</h1>
+    <h2>详细错误：@evm.ExecptionMsg</h2>
+    <h2>控制器：@evm.ControllerName</h2>
+    <h2>视图：@evm.ActionName</h2>
+    <h2>调用堆栈：@evm.StackTrace</h2>
+}
