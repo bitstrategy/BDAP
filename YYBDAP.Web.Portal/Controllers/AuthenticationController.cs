@@ -16,7 +16,7 @@ namespace YYBDAP.Web.Portal.Controllers
     [AllowAnonymous]
     public class AuthenticationController : Controller
     {
-        private IUserService userService = null;
+        IUserService userService;
 
         public AuthenticationController(IUserService _userService)
         {
